@@ -3,6 +3,11 @@ name: Python CI with Matrix
 on: [push, pull_request]
 
 jobs:
+  build:
+    runs-on: [docker-runner]
+    steps:
+      - uses: actions/checkout@v3
+      - run: echo "Hello from Dockerized Self-hosted Runner!"
   test:
     runs-on: ubuntu-latest
     strategy:
